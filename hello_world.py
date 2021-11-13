@@ -1,19 +1,15 @@
 from flask import Flask
 from flask import render_template
+from flask import request
+import region_dict
 
-app = Flask ("Bootstrap_Versuch")
 
+app = Flask ("Berge")
 
-@app.route("/")
-def start():
-    name = False
-    cards = [
-        {"titel": "Card 0", "inhalt": "Blubber"},
-        {"titel": "Card 1", "inhalt": "Bla"},
-        {"titel": "Card 2", "inhalt": "Käsekuchen"},
-        {"titel": "Card 3", "inhalt": "Sülze"},
-    ]
-    return render_template("index.html", name=name, cards=cards)
+# Code für Ausgangsseite mit Eingabe mithilfe der Website http://raspitips.de/flask-webapps-mit-python-erstellen/ erstellt
+@app.route("/", methods=["GET", "POST"])
+def formular_eingabe():
+    return render_template("index.html")
 
 
 if __name__ == "__main__":
