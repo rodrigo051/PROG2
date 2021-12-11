@@ -1,7 +1,7 @@
 from flask import Flask
 from flask import render_template
 from flask import request
-from region_dict import Frastanz
+from region_dict import berglist
 
 
 
@@ -12,7 +12,7 @@ app = Flask ("Bergapp")
 def formular_eingabe():
     return render_template("index.html")
 
-dict = Frastanz
+
 
 @app.route("/berge", methods=["GET", "POST"])
 def berge_filtern():
@@ -21,15 +21,17 @@ def berge_filtern():
         schwierigkeit = request.form["schwierigkeitslevel"]
         anreise = request.form["anreisemittel"]
 
-        if ort == "Frastanz" and schwierigkeit == "leicht" and anreise == "Auto":
-            for key, values in dict.items():
-                for value in values:
-                    berg = key
-                    return berg
+        filtered_list = []
+        for berge, attribute in berglist.items():
+            if anreise == attribute["Anreise"] and schwierigkeit == attribute["Schwierigkeit"] and ort in attribute["Einzugsgebiet"]:
+                filtered_list.append(berge)
 
-        else:
-            error = "Deine Eingabe hat irgend einen Fehler"
-            return error
+        return render_template("berge.html", bergliste=filtered_list)
+
+
+        # else:
+        #     error = "Deine Eingabe hat irgendeinen Fehler"
+        #     return error
 
 
 

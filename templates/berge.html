@@ -1,19 +1,20 @@
 {% include "header.html" %}
 
 
-<!-- Bootstrap navbar mithilfe der Bootstrap Dokumenation erstellt -->
-<nav class="navbar navbar-expand-lg navbar-dark bg-dark">
-<div class="container">
-  <a class="navbar-brand" href="nav-logo">PEAK</a>
-      <span class="navbar-text">
-          Bergtourplaner für Vorarlberg
-      </span>
-</div>
-</nav>
-
 <!-- Ausgabe der Berge, die empfohlen werden -->
+
 <div class="container">
+  <br>
+  <h1>Vorschläge für dich</h1>
+  <p>In den nachfolgenden Liste kannst du die für dich am geeignetesten Berge sehen. Viel spaß bei deiner Tour!</p>
 </div>
-
-
+<br>
+<div class="container">
+<ul class="list-group">
+        {% for berg in bergliste %}
+<!--                <li class="list-group-item">{{ berg }}</li>-->
+                <a href="#" class="list-group-item list-group-item-action list-group-item-info">{{ berg }}</a>
+        {% endfor %}
+</ul>
+</div>
 {% include "footer.html" %}
