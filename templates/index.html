@@ -4,34 +4,34 @@
 <!-- Einführung was wann in der Webapp überhaupt machen kann (kurze Beschreibung) -->
 <div class="container">
   <br>
-  <h1>Plane deine Berg Touren in Vorarlberg.</h1>
-  <p>Mit der der PEAK Bergapp kannst du ganz einfach deine Tour von zuhause aus planen. Gib einfach deinen Ausgangsort und weitere Attribute ein und erhalte dazu passende Bergtouren.</p>
+  <h1>Dein Überblick über deine absolvierten Bergtouren.</h1>
+  <p>Mit der der PEAK Bergapp kannst du ganz einfach deine Bergtouren eintragen. Du kannst die Gehdauer und weitere Attribute eingeben und so eine Auflistung deiner Bergbegsteigungen erhalten.</p>
 </div>
 
-<!-- Code für Ausgangsseite mit Eingabe (Hilfe beim Code von http://raspitips.de/flask-webapps-mit-python-erstellen/) -->
+<!-- Code für Ausgangsseite mit Eingabe -->
 <div class="container">
         <form action = "http://localhost:5000/berge" method="POST"> <!-- Daten werden an die url /berge weiter gegeben, um mit den im Formular eingetragenen Daten zu arbeiten -->
           <hr>
           <div class="form-group">
-            <label for="eingabe_ort">Ausgangsort</label>
-            <input name="ausgangsort" type="ort" class="form-control" id="eingabe_ort" aria-describedby="beschreibung-ort">
-            <small id="beschreibung_ort" class="form-text text-muted">Bitte gib deinen Ausgangsort ein</small>
+            <label for="eingabe_berggipfel">Berggipfel</label> <!-- Eingabe Formular für die Ortseingabe -->
+            <input name="berggipfel" type="berg" class="form-control" id="eingabe_berggipfel" aria-describedby="beschreibung-berg">
+            <small id="beschreibung_berg" class="form-text text-muted">Bitte gib den bestiegenen Berggipfel ein</small>
           </div>
           <br>
           <div class="form-group">
-            <label for="eingabe_schwierigkeit">Schwierigkeitslevel</label>
-            <input name="schwierigkeitslevel" type="schwierigkeit" class="form-control" id="eingabe_schwierigkeit" aria-describedby="beschreibung_schwierigkeit">
-            <small id="beschreibung_schwierigkeit" class="form-text text-muted">Bitte gib den Schwierigkeitslevel leicht, mittel oder schwierig angeben</small>
+            <label for="eingabe_dauer">Gehdauer</label> <!-- Eingabe Formular für die Dauer -->
+            <input name="laufzeit" type="dauer" class="form-control" id="eingabe_dauer" aria-describedby="beschreibung_dauer">
+            <small id="beschreibung_dauer" class="form-text text-muted">Bitte gib die dafür benötigte Gehzeit in Minuten an</small>
           </div>
           <br>
           <div class="form-group">
-            <label for="eingabe_anreise">Anreise</label>
-            <input name="anreisemittel" type="anreise" class="form-control" id="eingabe_anreise" aria-describedby="beschreibung_anreise">
-            <small id="beschreibung_anreise" class="form-text text-muted">Möchten Sie lieber mit Auto oder mit Öffentlichen Verkehrsmitteln (bitte ÖV angeben) anreisen?</small>
+            <label for="eingabe_distanz">zurückgelegte Distanz</label> <!-- Eingabe Formular für die Distanz -->
+            <input name="zurueckgelegte_distanz" type="distanz" class="form-control" id="eingabe_distanz" aria-describedby="beschreibung_distanz">
+            <small id="beschreibung_distanz" class="form-text text-muted">Bitte die zurückgelegte Distanz in km angeben z.B. 10.4 </small>
           </div>
           <hr>
 
-          <button type="submit" class="btn btn-primary">Übernehmen</button>
+          <button type="submit" class="btn btn-primary">Übernehmen</button> <!-- Button zur Datenübergabe der Eingabe -->
         </form>
 </div>
 

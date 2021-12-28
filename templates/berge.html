@@ -6,15 +6,18 @@
 <div class="container">
   <br>
   <h1>Vorschläge für dich</h1>
-  <p>In den nachfolgenden Liste kannst du die für dich am geeignetesten Berge sehen. Viel spaß bei deiner Tour!</p>
+  <p>In den nachfolgenden Liste kannst du die von dir durchgeführten Bergtouren sehen</p>
 </div>
 <br>
 <div class="container">
-<ul class="list-group">
-        {% for berg in bergliste %}
-<!--                <li class="list-group-item">{{ berg }}</li>-->
-                <a href="#" class="list-group-item list-group-item-action list-group-item-info">{{ berg }}</a>
-        {% endfor %}
-</ul>
+    {{ berginfos }}
+
+
+<!--    <ul class="list-group">-->
+<!--        {% for berg in bergliste %}-->
+<!--&lt;!&ndash;                <li class="list-group-item">{{ berg }}</li>&ndash;&gt;-->
+<!--                <a href="#" class="list-group-item list-group-item-action list-group-item-success">{{ berg }}</a> &lt;!&ndash; Auflistung der Berge die für eine Tour empfohlen werden &ndash;&gt;-->
+<!--        {% endfor %}-->
+<!--</ul>-->
 </div>
 {% include "footer.html" %}
