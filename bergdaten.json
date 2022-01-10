@@ -1,12 +1,27 @@
 {
-    "2021-12-27 21:00:31.880327": {
-        "Berg": "Gurtisspitze",
-        "Dauer": "120",
-        "Distanz": "10"
+    "2022-01-08 14:54:17.016339": {
+        "Berg": "Saladinaspitze",
+        "Dauer": 250,
+        "Distanz": 9.0
     },
-    "2021-12-27 21:03:22.910655": {
-        "Berg": "Drei Schwestern",
-        "Dauer": "180",
-        "Distanz": "12"
+    "2022-01-10 18:23:17.774104": {
+        "Berg": "Gurtisspitze",
+        "Dauer": 120,
+        "Distanz": 7.0
+    },
+    "2022-01-10 18:46:27.962121": {
+        "Berg": "Zeawasheilspitze",
+        "Dauer": 100,
+        "Distanz": 6.8
+    },
+    "2022-01-10 19:45:50.918287": {
+        "Berg": "Rote Wand",
+        "Dauer": 360,
+        "Distanz": 14.0
+    },
+    "2022-01-10 19:46:37.800787": {
+        "Berg": "Kanisfluh",
+        "Dauer": 200,
+        "Distanz": 9.0
     }
 }

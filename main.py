@@ -1,32 +1,22 @@
 from flask import Flask
 from flask import render_template
-from flask import request
+from flask import request, redirect, url_for
 import data
+import grafik
+from plotly.offline import plot
+import matplotlib.pyplot as plt
+
+
 
 
 app = Flask ("Bergapp")
 
-# Code für Ausgangsseite mit Eingabe mithilfe der Website http://raspitips.de/flask-webapps-mit-python-erstellen/ erstellt
+# Code für Ausgangsseite mit Eingabe
 @app.route("/", methods=["GET", "POST"])
 def formular_eingabe():
     return render_template("index.html")
 
-
-
-# @app.route("/berge", methods=["GET", "POST"])
-# def berge_filtern():
-#     if request.method == "POST":
-#         ort = request.form["ausgangsort"]
-#         schwierigkeit = request.form["schwierigkeitslevel"]
-#         anreise = request.form["anreisemittel"]
-#
-#         filtered_list = []
-#         for berge, attribute in berglist.items():
-#             if anreise == attribute["Anreise"] and schwierigkeit == attribute["Schwierigkeit"] and ort in attribute["Einzugsgebiet"]:
-#                 filtered_list.append(berge)
-#
-#         return render_template("berge.html", bergliste=filtered_list)
-
+# Code für die Speicherung der Eingabe vom Berggipfel, der Dauer und der Strecke
 @app.route("/berge", methods=["GET", "POST"])
 def berge_filtern():
     if request.method == "POST":
@@ -36,26 +26,42 @@ def berge_filtern():
 
         bergdaten = {
                 "Berg": berg,
-                "Dauer": dauer,
-                "Distanz": distanz
+                "Dauer": int(dauer),
+                "Distanz": float(distanz)
             }
 
-        bergdaten = data.bergdaten_speichern(bergdaten)
+        data.bergdaten_speichern(bergdaten)
+
+    return redirect(url_for('auflisten'))
+    #mit return redirect wird die url mit der Auflistung der Berge aufgerufen
+
+
+# Code der die Auflistung der Berge vornimmt und alle Berge mit den dazughörigen Daten (Dauer, Distanz) als Liste ausgibt
+@app.route("/auflistung_berge", methods=["GET", "POST"])
+def auflisten():
+    bergdaten = data.bergdaten_laden()
     return render_template('berge.html', berginfos=bergdaten)
+    #mit den berginfos wird dem template berge.html das gesamte Dictionary übergeben, welches in Jinja dann weiterbearbeitet wird
 
 
+# Code für die Berechnung und Ausgabe der Gesamtdauer, Gesamtstrecke und der Durchschnittsdauer
+@app.route("/auflistung_tourdaten", methods=["GET", "POST"])
+def auflisten_tourdaten():
+    bergdaten = data.bergdaten_laden()
+    datenliste = list(bergdaten.values())
+    for berge in datenliste:
+        dauer = berge['Dauer']
+        strecke = berge['Distanz']
+
+    return render_template('tourdaten.html', test=dauer, test1=strecke)
 
 
+@app.route("/grafische_uebersicht", methods=["GET", "POST"])
+def grafische_darstellung():
+    plt = grafik.diagramm()
+    div = plot(plt, output_type="div")
 
-        # else:
-        #     error = "Deine Eingabe hat irgendeinen Fehler"
-        #     return error
-
-
-
-
-#    return render_template("berge.html")
-
+    return render_template('diagramm.html', diagramm=div)
 
 
 
