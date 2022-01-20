@@ -1,16 +1,68 @@
 {% include "header.html" %}
 
-
+<!-- Ausgabe der Tourdaten mit Gesamtdauer, Gesamtstrecke, Dauerdurchschnitt und Streckendurchschnitt -->
+<!-- wiederum wurde hier mit jinja gearbeitet was sehr gut funktioniert hat -->
 <div class="container">
   <br>
-  <h2>Deine gesamten Tourdaten</h2>
-  <p>In den nachfolgenden Liste kannst du die Gesamtstrecke, Gesamtdauer und die durchschnittliche Gehzeit sehen.</p>
+  <h1>Deine gesamten Tourdaten</h1>
+    <hr>
+  <p>In den nachfolgenden Liste kannst du Daten zu deinen bisher zurückgelegten Touren sehen.</p>
 </div>
 <br>
 <div class="container">
-    {{ test }}
-    {{ test1 }}
+<div class="card text-center">
+  <div class="card-header">
+    <h5><b>Gesamtdauer deiner Bergtouren</b></h5>
+  </div>
+  <div class="card-body">
+      <h5 class="card-title">Du hast für all deine Touren ingesamt <b>{{ dauer }}</b> Minuten gebraucht.</h5>
+    <p class="card-text">Du kannst echt stolz auf dich sein, du bist ein wahrer Bergsteiger!</p>
+  </div>
 </div>
-<br>
+
+    <br>
+
+    <div class="card text-center">
+        <div class="card-header">
+        <h5><b>Gesamtstrecke deiner Bergtouren</b></h5>
+        </div>
+        <div class="card-body">
+            <h5 class="card-title">Auf deinen Touren hast du insgesamt <b>{{ strecke }}</b> Kilometer zurückgelegt.</h5>
+        <p class="card-text">Wow, auf noch viele weitere Touren!</p>
+        </div>
+    </div>
+
+    <br>
+
+        <div class="card text-center">
+            <div class="card-header">
+            <h5><b>Dauerdurchschnitt deiner Bergtouren</b></h5>
+            </div>
+            <div class="card-body">
+                <h5 class="card-title">Durchschnittlich warst du für deine Bergtouren <b>{{ dauerdurchschnitt }}</b> Minuten unterwegs.</h5>
+            <p class="card-text">Toller Durchschnitt, dein Körper dankt dir für so viel Bewegung!</p>
+            </div>
+        </div>
+
+    <br>
+
+        <div class="card text-center">
+            <div class="card-header">
+            <h5><b>Streckendurchschnitt deiner Bergtouren</b></h5>
+            </div>
+            <div class="card-body">
+                <h5 class="card-title">Zudem hast du durchschnittlich <b>{{ streckendurchschnitt }}</b> km zurückgelegt.</h5>
+            <p class="card-text">Deine Beine müssen ja förmlich brennen!</p>
+            </div>
+        </div>
+
+    <br>
+
+    <div class="col-md-12 text-center">
+        <a href="http://localhost:5000" class="btn btn-dark">Neue Tour eintragen</a>
+    </div>
+    <hr>
+</div>
+</div>
 
 {% include "footer.html" %}

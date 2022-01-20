@@ -1,8 +1,8 @@
 from datetime import datetime
 import json
 
-
-
+# es wurde vieles mithilfe der Demos erabeitet unter anderem auch die Funktionen bzgl. json
+# Funktion zur Erstellung des json Files
 def speichern(datei, key, value):
     try:
         with open(datei) as open_file:
@@ -17,12 +17,14 @@ def speichern(datei, key, value):
     with open(datei, "w") as open_file:
         json.dump(datei_inhalt, open_file, indent=4)
 
+# Funktion zur Speicherung der Bergdaten, die eingegeben werden
 def bergdaten_speichern(bergdaten):
     datei_name = "bergdaten.json"
     zeitpunkt = datetime.now()
     speichern(datei_name, zeitpunkt, bergdaten)
     return zeitpunkt, bergdaten
 
+# Funktion um die Bergdaten zu laden
 def bergdaten_laden():
     datei_name = "bergdaten.json"
 

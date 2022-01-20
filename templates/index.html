@@ -1,11 +1,12 @@
 {% include "header.html" %}
 
-
 <!-- Einführung was wann in der Webapp überhaupt machen kann (kurze Beschreibung) -->
 <div class="container">
   <br>
   <h1>Dein Überblick über deine absolvierten Bergtouren.</h1>
-  <p>Mit der der PEAK Bergapp kannst du ganz einfach deine Bergtouren eintragen. Du kannst die Gehdauer und weitere Attribute eingeben und so eine Auflistung deiner Bergbegsteigungen erhalten.</p>
+  <br>
+  <p>Mit der der PEAK Bergapp kannst du ganz einfach deine Bergtouren eintragen.</p>
+  <p>Du kannst die Gehdauer und weitere Attribute eingeben und so eine Auflistung deiner Bergbegsteigungen und weitere Informationen dazu erhalten.</p>
 </div>
 
 <!-- Code für Ausgangsseite mit Eingabe -->
@@ -15,23 +16,23 @@
           <div class="form-group">
             <label for="eingabe_berggipfel">Berggipfel</label> <!-- Eingabe Formular für den Berggipfel -->
             <input name="berggipfel" type="berg" class="form-control" id="eingabe_berggipfel" aria-describedby="beschreibung-berg">
-            <small id="beschreibung_berg" class="form-text text-muted">Bitte gib den bestiegenen Berggipfel ein</small>
+            <small id="beschreibung_berg" class="form-text text-muted">Bitte gib den bestiegenen Berggipfel ein.</small>
           </div>
           <br>
           <div class="form-group">
             <label for="eingabe_dauer">Gehdauer</label> <!-- Eingabe Formular für die Dauer -->
             <input name="laufzeit" type="dauer" class="form-control" id="eingabe_dauer" aria-describedby="beschreibung_dauer">
-            <small id="beschreibung_dauer" class="form-text text-muted">Bitte gib die dafür benötigte Gehzeit in Minuten an</small>
+            <small id="beschreibung_dauer" class="form-text text-muted">Bitte gib die dafür benötigte Gehzeit in Minuten an.</small>
           </div>
           <br>
           <div class="form-group">
             <label for="eingabe_distanz">zurückgelegte Distanz</label> <!-- Eingabe Formular für die Distanz -->
             <input name="zurueckgelegte_distanz" type="distanz" class="form-control" id="eingabe_distanz" aria-describedby="beschreibung_distanz">
-            <small id="beschreibung_distanz" class="form-text text-muted">Bitte die zurückgelegte Distanz in km angeben z.B. 10.4 </small>
+            <small id="beschreibung_distanz" class="form-text text-muted">Bitte die zurückgelegte Distanz in km angeben z.B. 10.4.</small>
           </div>
           <hr>
 
-          <button type="submit" class="btn btn-primary">Übernehmen</button> <!-- Button zur Datenübergabe der Eingabe -->
+          <button type="submit" class="btn btn-dark">Übernehmen</button> <!-- Button zur Datenübergabe der Eingabe -->
         </form>
 </div>
 

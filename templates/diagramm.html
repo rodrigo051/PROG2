@@ -1,9 +1,20 @@
 {% include "header.html" %}
 
+<!--Ausgabe von zwei Plot-Balkendiagrammen mit den Bergen und den jeweils dazugehörigen Strecken und Minuten-->
+<!--Ausgabe ebenfalls wieder mittels jinja-->
 <div class="container">
   <br>
   <h1>Übersicht Touren</h1>
-    {{ diagramm }}
+  <hr>
+  <h4>Diagramm für Berge mit zurückgelegter Strecke (x-Achse = Berg, y-Achse = km)</h4>
+  <p>Im unten stehenden Diagramm kannst du die Länge deiner Bergtouren vergleichen. Es waren viele unterschiedliche
+  Bergtouren dabei.</p>
+    {{ viz_div|safe }}
+  <br>
+  <h4>Diagramm für Berge mit Aufstiegszeit (x-Achse = Berg, y-Achse = Minuten)</h4>
+  <p>In diesem Diagramm kannst du deine Aufstiegszeit der jeweiligen Berge vergleichen. Du hast viel Zeit in den
+  Bergen verbracht.</p>
+    {{ viz_div1|safe }}
 </div>
 <br>
 

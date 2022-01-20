@@ -23,5 +23,30 @@
         "Berg": "Kanisfluh",
         "Dauer": 200,
         "Distanz": 9.0
+    },
+    "2022-01-14 15:15:24.278489": {
+        "Berg": "Naafkopf",
+        "Dauer": 350,
+        "Distanz": 16.3
+    },
+    "2022-01-14 15:26:17.176843": {
+        "Berg": "Loischkopf",
+        "Dauer": 135,
+        "Distanz": 10.4
+    },
+    "2022-01-14 15:29:51.598384": {
+        "Berg": "Fundelkopf",
+        "Dauer": 270,
+        "Distanz": 9.6
+    },
+    "2022-01-14 17:11:17.485458": {
+        "Berg": "Roggelskopf",
+        "Dauer": 270,
+        "Distanz": 9.7
+    },
+    "2022-01-20 18:12:19.526170": {
+        "Berg": "Hohe Kugel",
+        "Dauer": 165,
+        "Distanz": 9.8
     }
 }

@@ -1,22 +1,26 @@
 {% include "header.html" %}
 
-
 <!-- Ausgabe der Berge die bis zum jetzigen Zeitpunkt bestiegen wurden-->
-
 <div class="container">
   <br>
   <h1>Deine Bergtouren</h1>
-  <p>In den nachfolgenden Liste kannst du die von dir durchgeführten Bergtouren sehen</p>
+    <hr>
+  <p>In den nachfolgenden Liste kannst du die von dir durchgeführten Bergtouren sehen.</p>
 </div>
 <br>
 <div class="container">
     <ul class="list-group"> <!-- mithilfe von Jinja wird eine Liste erstellt aus den Bergen mit den zugehörigen Daten -->
     {% for datum, berge in berginfos.items() %}
-        <li class="list-group-item list-group-item-success"><b>{{ berge.Berg }}</b> bestiegen am <b>{{ datum }}</b>
+        <li class="list-group-item list-group-item-success"><b>{{ berge.Berg }}</b> eingetragen am <b>{{ berge.Datum }}</b>
             mit einer Dauer von insgesamt <b>{{ berge.Dauer }}</b> Minuten und einer Länge von <b>{{ berge.Distanz }}</b> km.</li>
     {% endfor %}
     </ul>
+    <br>
+    <div class="col-md-12 text-center">
+        <a href="http://localhost:5000/auflistung_tourdaten" class="btn btn-dark">Zur Tourdatenübersicht</a><!--Verlinkung zur jeweiligen Seite-->
+        <a href="http://localhost:5000/grafische_uebersicht" class="btn btn-dark">Zur Grafikübersicht</a><!--Verlinkung zur jeweiligen Seite-->
+    </div>
+    <hr>
 </div>
-<br>
 
 {% include "footer.html" %}
